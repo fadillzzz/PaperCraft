@@ -1,0 +1,30 @@
+From f6b1149a5c9cc103fe16b311a6daa344ecb61ab8 Mon Sep 17 00:00:00 2001
+From: Kemal Fadillah <fadillzzz@gmail.com>
+Date: Tue, 1 Oct 2019 19:06:38 +0700
+Subject: [PATCH] Forces infection on normal difficulty
+
+---
+ src/main/java/net/minecraft/server/EntityZombie.java | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/src/main/java/net/minecraft/server/EntityZombie.java b/src/main/java/net/minecraft/server/EntityZombie.java
+index 99b2e781..6bb16d25 100644
+--- a/src/main/java/net/minecraft/server/EntityZombie.java
++++ b/src/main/java/net/minecraft/server/EntityZombie.java
+@@ -422,9 +422,13 @@ public class EntityZombie extends EntityMonster {
+     public void b(EntityLiving entityliving) {
+         super.b(entityliving);
+         if ((this.world.getDifficulty() == EnumDifficulty.NORMAL || this.world.getDifficulty() == EnumDifficulty.HARD) && entityliving instanceof EntityVillager) {
++            // PaperCraft start
++            /*
+             if (this.world.getDifficulty() != EnumDifficulty.HARD && this.random.nextBoolean()) {
+                 return;
+             }
++            */
++            // PaperCraft end
+ 
+             EntityVillager entityvillager = (EntityVillager) entityliving;
+             EntityZombieVillager entityzombievillager = (EntityZombieVillager) EntityTypes.ZOMBIE_VILLAGER.a(this.world);
+-- 
+2.21.0.windows.1
+

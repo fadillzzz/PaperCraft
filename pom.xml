@@ -1,0 +1,18 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>la.fadzil.papercraft</groupId>
+    <artifactId>papercraft-parent</artifactId>
+    <version>dev-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>PaperCraft (Parent)</name>
+
+    <build>
+        <defaultGoal>install</defaultGoal>
+        <finalName>${project.artifactId}</finalName>
+    </build>
+    <modules>
+        <module>PaperCraft-API</module>
+        <module>PaperCraft-Server</module>
+    </modules>
+</project>
